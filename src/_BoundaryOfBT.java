@@ -1,4 +1,8 @@
-ArrayList < Integer > ans = new ArrayList < Integer > ();
+class Solution
+{
+	ArrayList <Integer> boundary(Node node)
+	{
+	    ArrayList<Integer> ans = new ArrayList<>();
         if (isLeaf(node) == false) 
             ans.add(node.data);
         addLeftBoundary(node, ans);
@@ -32,8 +36,7 @@ ArrayList < Integer > ans = new ArrayList < Integer > ();
                cur = cur.right;
             else cur = cur.left;
         }
-        int i;
-        for (i = tmp.size() - 1; i >= 0; --i) {
+        for (int i = tmp.size() - 1; i >= 0; --i) {
             res.add(tmp.get(i));
         }
     }
@@ -48,3 +51,4 @@ ArrayList < Integer > ans = new ArrayList < Integer > ();
         if (root.right != null) 
             addLeaves(root.right, res);
     }
+}
